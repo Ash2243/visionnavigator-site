@@ -4,16 +4,247 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Vision privacy policy</title>
-  <meta name="robots" content="noindex">
+  <meta name="description" content="How the Vision Chrome extension (beta) handles your data.">
   <link rel="stylesheet" href="/style.css">
+  <style>
+    h2 { font-size: 21px; margin: 36px 0 10px; }
+    h3 { font-size: 17px; margin: 24px 0 8px; }
+    ul { margin: 0 0 16px; padding-left: 22px; }
+    li { margin: 4px 0; }
+    table { border-collapse: collapse; width: 100%; margin: 0 0 16px; font-size: 15px; }
+    th, td { border: 1px solid var(--border); padding: 6px 8px; text-align: left; vertical-align: top; }
+  </style>
 </head>
 <body>
   <main>
     <h1>Vision privacy policy</h1>
-    <p class="lead">Vision's privacy policy will be published here before the beta opens.</p>
-    <p>Questions in the meantime: <a href="mailto:support@visionnavigator.app">support@visionnavigator.app</a></p>
+    <p><strong>Effective date:</strong> 18 November 2026 · <strong>Version:</strong> 1 · <strong>Applies to:</strong> the Vision Chrome extension (beta) and its server.</p>
+    <h2>In short</h2>
+    <ul>
+    <li>Vision reads a web page <strong>only when you ask it to</strong>: when you click its icon on that page, or on sites you've chosen to always allow. It never reads banking, health-record, email, messaging or password-manager pages. It asks first on pages that show personal details.</li>
+    <li>When it reads a page, the page's text and links go to <strong>Vision's server</strong> (Google Cloud, in Mumbai, India) and to <strong>Google's Gemini API</strong>, which answers your questions. ID, card and account numbers are hidden <strong>on your device</strong> first. This detection is automatic and can miss things.</li>
+    <li>The page is kept <strong>only in the server's memory</strong>, for your session, and is never saved. Your conversation stays in Vision's side panel and is sent with each question.</li>
+    <li>Vision doesn't sell your data, show ads, or use your data to train AI models.</li>
+    <li>You can withdraw your agreement, delete your free-tier data, or remove your key at any time in Vision's options.</li>
+    </ul>
+    <h2>1. Who we are</h2>
+    <p>Vision is a beta product developed and operated by Ash, an individual developer based in India ("we", "us"). We are responsible for the personal data described here.</p>
+    <p>You can reach us at <strong>support@visionnavigator.app</strong>.</p>
+    <h2>2. Who can use Vision</h2>
+    <p>Vision is for people <strong>aged 18 or over</strong>. It relies on Google's Gemini API, whose terms don't allow services directed at people under 18. During the beta, you need a beta code from us.</p>
+    <h2>3. What Vision handles, and why</h2>
+    <h3>3.1 The pages you ask Vision to read</h3>
+    <p><strong>When Vision reads a page:</strong></p>
+    <ul>
+    <li>only when you click Vision's icon on that page, or press "Read this page" in its side panel; or</li>
+    <li>on a site you have chosen to "Always allow", which you can revoke at any time.</li>
+    </ul>
+    <p>Vision never reads a page by itself when you move to a site you haven't allowed.</p>
+    <p><strong>Pages Vision never reads,</strong> even if you allow the site:</p>
+    <ul>
+    <li>banking and payment wallets;</li>
+    <li>health records;</li>
+    <li>email and messaging;</li>
+    <li>password managers and account-security pages;</li>
+    <li>investment and brokerage accounts;</li>
+    <li>signed-in government identity and tax pages;</li>
+    <li>company payroll and HR systems.</li>
+    </ul>
+    <p><strong>Pages where Vision asks first:</strong> pages with sign-in or personal-detail fields, or that show personal details such as ID, card or account numbers. Vision explains why and reads them only if you allow it, once. Payment pages always need their own one-time permission.</p>
+    <p><strong>What is sent when Vision reads a page:</strong></p>
+    <ul>
+    <li>the page's visible text (up to 150,000 characters);</li>
+    <li>the page's links and the labels of its buttons and links (up to 700 in all);</li>
+    <li>the page's address.</li>
+    </ul>
+    <p><strong>Never sent, on any page:</strong></p>
+    <ul>
+    <li>anything you type into the page: form fields, text boxes, editable areas;</li>
+    <li>selected options, hidden fields and autofilled values.</li>
+    </ul>
+    <p><strong>Hiding personal details:</strong></p>
+    <ul>
+    <li>On your device, before anything is sent, Vision replaces ID numbers (Aadhaar, PAN, passport), card numbers and bank account numbers with placeholders such as <code>[card number]</code>. On pages where you allowed a read after a warning, it also replaces email addresses and phone numbers.</li>
+    <li>Vision's server checks again before using the text.</li>
+    <li>This detection is automatic and works on known patterns, so it <strong>may miss</strong> details written in unusual ways.</li>
+    </ul>
+    <p><strong>Why:</strong> to answer your questions about the page you're on.</p>
+    <h3>3.2 Your questions and the conversation</h3>
+    <ul>
+    <li>Your conversation is kept <strong>in Vision's side panel</strong> while it's open, and only there.</li>
+    <li>With each question, Vision sends the question and the recent conversation (up to the last 20 messages) to its server. The server uses them for that answer and doesn't store them.</li>
+    <li>The conversation is cleared when you move to a different website, when you delete your data, and when the side panel closes.</li>
+    </ul>
+    <h3>3.3 Where the page and your questions go</h3>
+    <ul>
+    <li><strong>Vision's server</strong>, on Google Cloud Run in Mumbai, India.<ul>
+    <li>The page is held <strong>only in the server's memory</strong>, in a private session for you: for at most 30 minutes after you last use it, and never more than 2 hours.</li>
+    <li>It is <strong>never written</strong> to disk, to a database or to logs (tested).</li>
+    <li>A session works only for the person who started it.</li>
+    </ul>
+    </li>
+    <li><strong>Google's Gemini API</strong>, which processes the page text (to make it searchable) and your question, with the relevant parts of the page, to produce the answer. How Google treats this data depends on whose key pays (3.4).</li>
+    <li><strong>On the free tier only,</strong> an answer is kept in the server's memory for up to 5 minutes, so that a retried question doesn't cost twice. It is never written anywhere.</li>
+    </ul>
+    <h3>3.4 Gemini keys: the free tier, or your own key</h3>
+    <p><strong>The free tier.</strong> Vision pays for your questions with its own Gemini key, on a paid Google account. For paid use, Google states that it does <strong>not use prompts or responses to improve its products</strong>. Google keeps them for a limited period to detect misuse and for legal reasons. Gemini API request logging, which Google offers project owners in AI Studio, is <strong>turned off</strong> for the Gemini calls Vision makes, so those requests aren't kept in a log that we could read.</p>
+    <p><strong>Your own key.</strong> If you add your own Gemini API key in Vision's options:</p>
+    <ul>
+    <li>it is stored <strong>in plain text in this browser's extension storage</strong>, on your computer;</li>
+    <li>it is sent to Vision's server with each request, which uses it to call Gemini for that request only. It's <strong>not sent directly</strong> from the extension to Google, and Vision's server never stores or logs it.</li>
+    <li>"Remove key" in Vision's options deletes it from your browser. Signing out of the free tier doesn't.</li>
+    </ul>
+    <p>Google's terms for your key apply:</p>
+    <ul>
+    <li>If your key is on a <strong>paid</strong> Google project, Google doesn't use the data to improve its products.</li>
+    <li>If it's on Google's <strong>free (unpaid) tier</strong>, Google <strong>may use the data to improve its products, and human reviewers may read it.</strong> Google advises not sending sensitive or personal information on its unpaid tier.</li>
+    <li>Any logging your own Google project has switched on (in Google AI Studio) is under your control.</li>
+    </ul>
+    <h3>3.5 Signing in, and beta codes</h3>
+    <ul>
+    <li><strong>Google sign-in (for the free tier).</strong><ul>
+    <li>Vision asks Google only for an <strong>anonymous account identifier</strong> (the <code>openid</code> scope). It never receives your email address or name.</li>
+    <li>Vision immediately turns that identifier into a pseudonymous account key, using a secret only Vision's server holds, and works with that key.</li>
+    <li>Your browser keeps a sign-in token for 8 hours, renewed quietly when needed.</li>
+    </ul>
+    </li>
+    <li><strong>Without sign-in (when you use your own key).</strong><ul>
+    <li>Vision creates a random installation ID in your browser.</li>
+    <li>Your beta code is linked to a pseudonymous key made from that ID.</li>
+    <li>Your browser keeps an installation token (valid 30 days) and the beta code, so it can renew the token.</li>
+    </ul>
+    </li>
+    <li><strong>Why:</strong> to let in only beta testers, to enforce free-tier limits, and to let us revoke a code.</li>
+    </ul>
+    <h3>3.6 Free-tier usage records</h3>
+    <p>These records are stored in Google Cloud Firestore in Mumbai, India. They contain your pseudonymous key and counts, <strong>never page text, questions or answers</strong> (tested).</p>
+    <table>
+    <thead>
+    <tr>
+    <th>Record</th>
+    <th>What it holds</th>
+    <th>Kept until</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>Daily usage</td>
+    <td>Questions asked and pages read that day (counts and amounts)</td>
+    <td>30 days after the day starts</td>
+    </tr>
+    <tr>
+    <td>Request records</td>
+    <td>One per question or page read: its ID, type, state and cost</td>
+    <td>48 hours</td>
+    </tr>
+    <tr>
+    <td>Beta-code link</td>
+    <td>Which pseudonymous key a code belongs to, and whether it's revoked (two records: the code's and yours)</td>
+    <td>120 days after you redeem the code (the beta plus 30 days)</td>
+    </tr>
+    <tr>
+    <td>Sign-in check</td>
+    <td>A one-time security check for a sign-in attempt; no personal data</td>
+    <td>5 minutes</td>
+    </tr>
+    </tbody>
+    </table>
+    <p>Vision's monthly spending totals are Vision-wide and hold no account key. After a record's date, the database deletes it automatically, typically within 24 hours.</p>
+    <p><strong>Why:</strong> to keep the free tier within its limits, to stop a question being charged twice, and to stop a beta code being reused.</p>
+    <h3>3.7 Logs</h3>
+    <ul>
+    <li><strong>Google Cloud's own request logs.</strong> Google Cloud Run automatically creates a log entry for each request to Vision's server, including the IP address, browser details and the web address requested. Vision can't stop them being created. A <strong>filter is configured so they aren't stored</strong> in Vision's logs, and we checked that they aren't copied anywhere else (checked on 14 Nov 2026).</li>
+    <li><strong>Vision's own logs.</strong> These hold only technical details:<ul>
+    <li>the type of request, Vision's route (for example <code>/api/v1/chat/structured</code>), the result and how long it took;</li>
+    <li>counts;</li>
+    <li>the <strong>website's domain</strong> (for example <code>example.com</code>), but never the rest of the address.</li>
+    </ul>
+    </li>
+    </ul>
+    <p>They never contain page text, questions, answers, keys, tokens, your account key or your IP address. This is tested automatically on every change. They're kept for 30 days.</p>
+    <ul>
+    <li><strong>Rate limiting.</strong> To prevent abuse, Vision's server counts requests per IP address. The address is held <strong>only in the server's memory</strong>, never written anywhere, and forgotten when the server restarts.</li>
+    </ul>
+    <h3>3.8 Stored in your browser</h3>
+    <p>Vision's extension storage, which only Vision's own pages can read, holds:</p>
+    <ul>
+    <li>your agreement and its version;</li>
+    <li>your own Gemini key, if you added one (and, only on Vision team members' browsers, the team's access token);</li>
+    <li>your sign-in token, or your installation ID, installation token and beta code;</li>
+    <li>the sites you've allowed (kept by Chrome);</li>
+    <li>the current session token and page state, which are cleared when the browser closes;</li>
+    <li>a routing cookie that Google Cloud Run may set for Vision's server address, so that your requests reach the same server, which holds the page you read. It holds no personal details and is used for nothing else.</li>
+    </ul>
+    <p>Uninstalling Vision removes all of them.</p>
+    <h3>3.9 If you report a problem, or write to us</h3>
+    <ul>
+    <li>"Report a problem" in the side panel <strong>only prepares an email</strong> to <a href="mailto:support@visionnavigator.app">support@visionnavigator.app</a>. You open it in Gmail in your browser or in your email app, or copy its text, and send it yourself. Vision itself sends nothing. If you use Gmail, the email's text is passed to Gmail in the link that opens it, so it stays in your browser's history.</li>
+    <li>The draft can hold:<ul>
+    <li>the kind of problem and your own words;</li>
+    <li>the question and Vision's answer;</li>
+    <li>the buttons Vision offered and what happened when you used one;</li>
+    <li>the website's name, and the page's full address only if you tick the box;</li>
+    <li>Vision's version.</li>
+    </ul>
+    </li>
+    <li>ID, card and account numbers, email addresses and phone numbers in the question, the answer and the address are replaced before the draft opens. You can edit or delete anything before you send it, and nothing is sent unless you send it.</li>
+    <li>Reports and other emails to us are kept in our support mailbox for <strong>12 months</strong>, or deleted sooner if you ask, and used only to fix problems and answer you.</li>
+    </ul>
+    <h2>4. What Vision doesn't do</h2>
+    <ul>
+    <li>It doesn't sell your data or share it for advertising.</li>
+    <li>It doesn't use your data to train AI models, and doesn't let anyone else do so, except as Google's own terms describe for <strong>your own</strong> unpaid Gemini key (3.4).</li>
+    <li>It doesn't read pages you haven't asked it to, or read what you type into pages.</li>
+    <li>It doesn't share your data with anyone except the service providers below.</li>
+    </ul>
+    <h2>5. Who processes your data for us</h2>
+    <ul>
+    <li><strong>Google</strong>, as our service provider for:<ul>
+    <li>hosting (Cloud Run);</li>
+    <li>the database (Firestore);</li>
+    <li>logs (Cloud Logging);</li>
+    <li>secret storage (Secret Manager);</li>
+    <li>answers (the Gemini API);</li>
+    <li>sign-in (Google sign-in).</li>
+    </ul>
+    </li>
+    <li><strong>GitHub</strong>, which hosts this website (see 9).</li>
+    <li><strong>Zoho Mail</strong>, which hosts our support mailbox (<a href="mailto:support@visionnavigator.app">support@visionnavigator.app</a>), for the emails you send us, including problem reports (see 3.9).</li>
+    </ul>
+    <p>We would disclose data if the law required it.</p>
+    <h2>6. Your choices</h2>
+    <ul>
+    <li><strong>Withdraw your agreement:</strong> in Vision's options. Vision then stops reading and sending anything at once.</li>
+    <li><strong>Site access:</strong> stop "Always allow" for a site from Vision's side panel or Chrome's extension settings. Vision then stops reading that site immediately.</li>
+    <li><strong>Delete your free-tier data:</strong> "Delete my free-tier data" in Vision's options, which works even after withdrawing your agreement.<ul>
+    <li>It deletes your past daily usage records and your expired request records.</li>
+    <li>It signs you out and clears the conversation.</li>
+    <li>So that deletion can't be used to reset the free-tier limits, it keeps, and lists with their dates: today's usage counts (until 30 days after today), recent request records (up to 48 hours), and your beta-code link (until 120 days after redemption).</li>
+    <li>If your sign-in is more than 30 days old, sign in again first, or let the records expire on their own.</li>
+    </ul>
+    </li>
+    <li><strong>Remove your key or token:</strong> "Remove key" or "Remove token" in Vision's options.</li>
+    <li><strong>Questions or other requests</strong> about your data: write to <a href="mailto:support@visionnavigator.app">support@visionnavigator.app</a>.</li>
+    </ul>
+    <h2>7. Security</h2>
+    <ul>
+    <li>Vision's server is reached only over HTTPS. Its secrets are kept in Google Secret Manager, not in its code.</li>
+    <li>Access needs a valid beta credential, and every request is checked.</li>
+    <li>Sessions are signed and private to the person who started them.</li>
+    <li>No system is perfectly secure, and the automatic hiding of personal details (3.1) can miss things.</li>
+    </ul>
+    <h2>8. Where your data is processed</h2>
+    <p>Vision's server, database and logs are in Google Cloud's Mumbai region (<code>asia-south1</code>), in India. Google's Gemini API may process data in other countries where Google operates.</p>
+    <h2>9. This website</h2>
+    <p>This website (visionnavigator.app) is hosted on GitHub Pages. GitHub may collect technical information such as your IP address when you visit; see GitHub's privacy statement. The website itself has no cookies, analytics or forms.</p>
+    <h2>10. Changes to this policy</h2>
+    <p>When this policy changes, we update its version and effective date here. If a change affects what you agreed to, Vision shows its agreement screen again and reads or sends nothing until you agree.</p>
+    <h2>11. Chrome Web Store: Limited Use</h2>
+    <p>Vision's use of the information it receives complies with the <a href="https://developer.chrome.com/docs/webstore/program-policies/">Chrome Web Store User Data Policy</a>, including its Limited Use requirements.</p>
+    <h2>12. Contact</h2>
+    <p>support@visionnavigator.app</p>
     <footer>
-      <p><a href="/">Vision</a></p>
+      <p><a href="/">Vision</a> · Support: <a href="mailto:support@visionnavigator.app">support@visionnavigator.app</a></p>
     </footer>
   </main>
 </body>
